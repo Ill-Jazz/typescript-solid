@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Engine = void 0;
+var Engine = /** @class */ (function () {
+    function Engine(_status) {
+        this._status = false;
+        this._status = _status;
+    }
+    Object.defineProperty(Engine.prototype, "status", {
+        get: function () {
+            return this._status;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Engine.prototype.turnEngineOn = function () {
+        this._status = true;
+    };
+    Engine.prototype.turnEngineOff = function () {
+        this._status = false;
+    };
+    return Engine;
+}());
+exports.Engine = Engine;

@@ -1,0 +1,76 @@
+"use strict";
+/*import {MusicPlayer} from "./musicplayer";
+
+let musicPlayer = new MusicPlayer(0, 50);
+const musicToggleElement = <HTMLElement>document.querySelector('#music-toggle');
+const musicSliderElement = <HTMLInputElement>document.querySelector('#music-slider');
+const audioElement = <HTMLAudioElement>document.querySelector('#musicPlayer-music');
+
+musicToggleElement.addEventListener('click', () => {
+    if(musicPlayer.musicLevel === 0) {
+        musicPlayer.turnMusicOn();
+        musicSliderElement.value = musicPlayer.musicLevel.toString();
+        musicToggleElement.innerText = 'Turn music off';
+        return;
+    }
+    musicToggleElement.innerText = 'Turn music on';
+    musicPlayer.turnMusicOff();
+});
+
+musicSliderElement.addEventListener('input', (event) => {
+    let target = <HTMLFormElement>(event.target);
+
+    musicPlayer.musicLevel = target.value;
+    audioElement.volume = musicPlayer.musicLevel / 100;
+
+    //@todo when you are repeating the same text over and over again maybe we should have made some constants for it? Can you do improve on this?
+    musicToggleElement.innerText = musicPlayer.musicLevel ? 'Turn music off' : 'Turn music on';
+});
+
+setInterval(() => {
+
+    if(musicPlayer.musicLevel === 0) {
+        audioElement.pause();
+    } else {
+        audioElement.play();
+    }
+
+}, 1000);
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+// MUSIC PLAYER
+// Creates new MusicPlayer object
+var musicPlayer = new MusicPLayer(0, 50);
+var musicToggleElement = document.querySelector("#music-toggle");
+var musicSliderElement = (document.querySelector("#music-slider"));
+// const engineToggleElement = <HTMLInputElement>(
+//   document.querySelector("#engine-toggle")
+// );
+var audioElement = document.querySelector("#car-music");
+musicToggleElement.addEventListener("click", function () {
+    if (musicPlayer.musicLevel === 0) {
+        musicPlayer.turnMusicOn();
+        musicSliderElement.value = musicPlayer.musicLevel.toString();
+        musicToggleElement.innerText = "Turn music off";
+        return;
+    }
+    musicToggleElement.innerText = "Turn music on";
+    musicPlayer.turnMusicOff();
+});
+musicSliderElement.addEventListener("input", function (event) {
+    var target = event.target;
+    musicPlayer.musicLevel = target.value;
+    audioElement.volume = musicPlayer.musicLevel / 100;
+    //@todo when you are repeating the same text over and over again maybe we should have made some constants for it? Can you do improve on this?
+    musicToggleElement.innerText = musicPlayer.musicLevel
+        ? "Turn music off"
+        : "Turn music on";
+});
+setInterval(function () {
+    if (musicPlayer.musicLevel === 0) {
+        audioElement.pause();
+    }
+    else {
+        audioElement.play();
+    }
+}, 1000);
